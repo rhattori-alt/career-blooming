@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Blooming｜服部陵子</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #FDF8F2;
+    --bg2:       #FFF9F4;
+    --warm:      #F2E8D9;
+    --caramel:   #C8895A;
+    --caramel-l: #EDDCC8;
+    --caramel-d: #9B6640;
+    --green:     #7A9A7C;
+    --green-l:   #C0D4C2;
+    --green-d:   #4E7250;
+    --brown:     #3D2B1F;
+    --mid:       #7A6558;
+    --light:     #B0A098;
+    --line:      rgba(61,43,31,0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--brown);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 3rem;
+    background: rgba(253,248,242,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--brown);
+    text-decoration: none;
+    line-height: 1.3;
+  }
+  .nav-logo span {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 300;
+    letter-spacing: 0.28em;
+    color: var(--caramel-d);
+    margin-top: 2px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--caramel-d); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    padding-top: 68px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    background: var(--bg2);
+  }
+  .hero-bloom {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--caramel);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-bloom::before {
+    content: '';
+    display: inline-block;
+    width: 28px; height: 1px;
+    background: var(--caramel);
+  }
+  .hero-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--brown);
+    margin-bottom: 0.6rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--caramel-d);
+  }
+  .hero-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 2.3;
+    margin-bottom: 2.8rem;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: var(--caramel);
+    color: white;
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    padding: 1rem 2.2rem;
+    border-radius: 2px;
+    transition: background 0.25s;
+    align-self: flex-start;
+  }
+  .hero-cta:hover { background: var(--caramel-d); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--caramel-l) 0%, var(--warm) 60%, var(--green-l) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .hero-deco {
+    position: absolute;
+    top: 2.5rem; right: 2.5rem;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 9rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.3);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-card {
+    position: relative;
+    z-index: 2;
+    margin: 2rem;
+    background: rgba(253,248,242,0.88);
+    backdrop-filter: blur(10px);
+    padding: 1.6rem 2rem;
+    border-left: 3px solid var(--caramel);
+  }
+  .hero-card strong {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .hero-card span {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+  }
+
+  /* SECTIONS */
+  section { padding: 6.5rem 0; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 3rem; }
+
+  .sec-head { margin-bottom: 3.5rem; }
+  .sec-en {
+    font-family: 'Lora', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--brown);
+    display: block;
+    line-height: 1.1;
+  }
+  .sec-ja {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: var(--caramel-d);
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  /* ABOUT */
+  .about { background: var(--warm); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+  .about-photo-wrap { position: relative; }
+  .about-photo-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(145deg, var(--caramel-l), var(--green-l));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mid);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+  }
+  .about-photo-deco {
+    position: absolute;
+    bottom: -12px; right: -12px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: 1px solid var(--caramel-l);
+    pointer-events: none;
+  }
+  .about-lead {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    line-height: 2.3;
+    color: var(--brown);
+    margin-bottom: 1.8rem;
+  }
+  .about-body {
+    font-size: 0.82rem;
+    line-height: 2.3;
+    color: var(--mid);
+    margin-bottom: 2rem;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .tag {
+    font-size: 0.63rem;
+    letter-spacing: 0.08em;
+    padding: 0.38rem 0.9rem;
+    border: 1px solid var(--caramel-l);
+    color: var(--caramel-d);
+    background: var(--bg2);
+    border-radius: 1px;
+  }
+  .tag.green { border-color: var(--green-l); color: var(--green-d); }
+
+  /* SERVICE */
+  .service { background: var(--bg2); }
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .scard {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 2.5rem 2rem;
+    border-radius: 2px;
+    transition: box-shadow 0.25s, transform 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .scard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--caramel), var(--green));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .scard:hover { box-shadow: 0 8px 32px rgba(61,43,31,0.08); transform: translateY(-3px); }
+  .scard:hover::before { opacity: 1; }
+  .scard-num {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: var(--caramel-l);
+    display: block;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .scard-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.98rem;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .scard-body {
+    font-size: 0.78rem;
+    color: var(--mid);
+    line-height: 2.1;
+    margin-bottom: 1.5rem;
+  }
+  .scard-list {
+    list-style: none;
+    border-top: 1px solid var(--line);
+    padding-top: 1.2rem;
+  }
+  .scard-list li {
+    font-size: 0.7rem;
+    color: var(--light);
+    padding: 0.22rem 0 0.22rem 1rem;
+    position: relative;
+    letter-spacing: 0.04em;
+  }
+  .scard-list li::before {
+    content: '∙';
+    position: absolute;
+    left: 0;
+    color: var(--caramel-l);
+  }
+
+  /* EXPERIENCE */
+  .experience { background: var(--bg); }
+  .exp-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .exp-block-label {
+    font-size: 0.63rem;
+    letter-spacing: 0.28em;
+    color: var(--caramel-d);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .exp-block-label::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: var(--caramel-l);
+  }
+  .exp-items { list-style: none; }
+  .exp-items li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--mid);
+    line-height: 1.7;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+  }
+  .exp-items li::before {
+    content: '›';
+    color: var(--caramel);
+    flex-shrink: 0;
+  }
+  .exp-note {
+    margin-top: 2rem;
+    background: var(--warm);
+    border-left: 3px solid var(--green);
+    padding: 1.4rem 1.8rem;
+    font-size: 0.8rem;
+    color: var(--mid);
+    line-height: 2;
+  }
+  .exp-note strong {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--green-d);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  /* PHILOSOPHY */
+  .philosophy {
+    background: linear-gradient(135deg, var(--caramel-l) 0%, var(--warm) 50%, var(--green-l) 100%);
+    padding: 6rem 0;
+  }
+  .phil-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .phil-quote {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--brown);
+    margin-bottom: 2rem;
+  }
+  .phil-deco {
+    width: 40px; height: 1px;
+    background: var(--caramel);
+    margin: 0 auto 2rem;
+  }
+  .phil-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.85rem;
+    line-height: 2.6;
+    color: var(--mid);
+  }
+
+  /* TOPICS */
+  .topics { background: var(--bg2); }
+  .topic-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .titem {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 2.2rem 2.5rem;
+    border-radius: 2px;
+    transition: box-shadow 0.2s;
+  }
+  .titem:hover { box-shadow: 0 4px 20px rgba(61,43,31,0.06); }
+  .titem-date {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--caramel);
+    margin-bottom: 0.7rem;
+  }
+  .titem-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--brown);
+    margin-bottom: 0.8rem;
+  }
+  .titem-body {
+    font-size: 0.76rem;
+    color: var(--mid);
+    line-height: 2;
+  }
+
+  /* CONTACT */
+  .contact { background: var(--warm); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-lead {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    line-height: 2.3;
+    color: var(--brown);
+    margin-bottom: 1.5rem;
+  }
+  .contact-note {
+    font-size: 0.75rem;
+    color: var(--mid);
+    line-height: 2.2;
+  }
+  .contact-note a { color: var(--caramel-d); text-decoration: none; }
+
+  .form-row { margin-bottom: 1.4rem; }
+  .form-label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--caramel-d);
+    margin-bottom: 0.45rem;
+  }
+  .form-input, .form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--bg2);
+    border: 1px solid var(--caramel-l);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--brown);
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--caramel); }
+  .form-textarea { height: 130px; resize: vertical; }
+  .form-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--caramel);
+    color: white;
+    border: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.25s;
+  }
+  .form-btn:hover { background: var(--caramel-d); }
+
+  /* FOOTER */
+  footer {
+    background: var(--brown);
+    padding: 2.8rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bg);
+    letter-spacing: 0.06em;
+  }
+  .footer-logo span {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.56rem;
+    letter-spacing: 0.25em;
+    color: var(--caramel-l);
+    margin-top: 3px;
+    font-weight: 300;
+  }
+  .footer-right { text-align: right; }
+  .footer-mail {
+    font-size: 0.7rem;
+    color: var(--caramel-l);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+  .footer-copy {
+    font-size: 0.6rem;
+    color: rgba(253,248,242,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-bloom { animation: fadeUp 0.7s ease both; animation-delay: 0.1s; }
+  .hero-title { animation: fadeUp 0.7s ease both; animation-delay: 0.25s; }
+  .hero-ja    { animation: fadeUp 0.7s ease both; animation-delay: 0.4s; }
+  .hero-cta   { animation: fadeUp 0.7s ease both; animation-delay: 0.55s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    nav { padding: 1.1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 3rem 2rem; }
+    .hero-right { height: 55vw; min-height: 260px; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .service-cards { grid-template-columns: 1fr; }
+    .exp-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .topic-list { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 4.5rem 0; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    Career Blooming
+    <span>服部陵子 HATTORI RYOKO</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">PROFILE</a></li>
+    <li><a href="#service">SERVICE</a></li>
+    <li><a href="#experience">EXPERIENCE</a></li>
+    <li><a href="#topics">TOPICS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-bloom">Career Consultant &amp; Psychologist</p>
+    <h1 class="hero-title">
+      あなたらしく、<br>
+      <em>咲いていい。</em>
+    </h1>
+    <p class="hero-ja">
+      可能性のつぼみを開き、<br>
+      自分らしく花開くキャリアへ。<br>
+      個人のご相談から企業研修・支援まで、<br>
+      一緒に考えていきます。
+    </p>
+    <a href="#contact" class="hero-cta">
+      お問い合わせはこちら
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-deco">花</div>
+    <div class="hero-card">
+      <strong>服部 陵子（はっとり りょうこ）</strong>
+      <span>Career Blooming 代表　キャリアコンサルタント・公認心理師</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-en">Profile</span>
+      <span class="sec-ja">プロフィール</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo-box">PHOTO</div>
+        <div class="about-photo-deco"></div>
+      </div>
+      <div>
+        <p class="about-lead">
+          国家資格キャリアコンサルタント・公認心理師として、企業と個人のキャリアを支援しています。
+        </p>
+        <p class="about-body">
+          新卒で国内大手航空会社に入社し、結婚・出産後の復職を経て退職。2013年よりキャリアコンサルタントとして主に企業領域での支援に取り組んでいます。<br><br>
+          厚生労働省が推進するセルフキャリアドック事業の導入支援や、キャリアコンサルタント向け研修の検討委員を長年にわたり務めるなど、制度と現場の両面から企業のキャリア支援に携わってきました。<br><br>
+          現在は、企業のキャリア支援施策の設計・運用、社員向けキャリア研修、復職支援、個人向けキャリアコンサルティング面談などを中心に活動しています。公認心理師の資格も持ち、メンタルヘルスの側面からも支援を行っています。
+        </p>
+        <div class="tags">
+          <span class="tag">国家資格キャリアコンサルタント</span>
+          <span class="tag">公認心理師</span>
+          <span class="tag">2級キャリアコンサルティング技能士</span>
+          <span class="tag">JCDA認定CDA</span>
+          <span class="tag">メンタルヘルスマネジメントⅡ種</span>
+          <span class="tag green">チーズプロフェッショナル</span>
+          <span class="tag green">ワインソムリエ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="service" id="service">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-en">Service</span>
+      <span class="sec-ja">サービス</span>
+    </div>
+    <div class="service-cards">
+      <div class="scard">
+        <span class="scard-num">01</span>
+        <h3 class="scard-title">企業向けキャリア支援</h3>
+        <p class="scard-body">セルフキャリアドックの導入から1on1研修の設計まで。社員一人ひとりが自律的にキャリアを描けるよう、組織の仕組みづくりをサポートします。</p>
+        <ul class="scard-list">
+          <li>セルフキャリアドック導入・運用支援</li>
+          <li>キャリアコンサルティング面談</li>
+          <li>1on1トレーニング</li>
+          <li>キャリア支援施策の設計・運用</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <span class="scard-num">02</span>
+        <h3 class="scard-title">研修・ファシリテーション</h3>
+        <p class="scard-body">ビジネスマナー・メンタルヘルス・キャリアデザインなど、企業の課題に応じた研修を企画・実施。新入社員から管理職まで幅広く対応しています。</p>
+        <ul class="scard-list">
+          <li>新入社員研修（ビジネスマナー等）</li>
+          <li>メンタルヘルス研修</li>
+          <li>管理職・リーダー向けキャリア研修</li>
+          <li>復職・両立支援研修</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <span class="scard-num">03</span>
+        <h3 class="scard-title">個人向けキャリア相談</h3>
+        <p class="scard-body">転職・復職・働き方の見直しなど、モヤモヤを一緒に整理します。心理師としての視点も持ちながら、安心して話せる場所を大切にしています。</p>
+        <ul class="scard-list">
+          <li>キャリアコンサルティング面談（オンライン可）</li>
+          <li>転職・復職支援</li>
+          <li>若者就労支援</li>
+          <li>育児・介護とキャリアの両立相談</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-en">Experience</span>
+      <span class="sec-ja">これまでの取り組み</span>
+    </div>
+    <div class="exp-layout">
+      <div>
+        <p class="exp-block-label">CAREER HISTORY</p>
+        <ul class="exp-items">
+          <li>国内大手航空会社（客室乗務員・地上職）</li>
+          <li>人材派遣会社 キャリアコンサルタント</li>
+          <li>厚労省委託事業 セルフキャリアドック事業</li>
+          <li>厚労省委託事業 キャリアコンサルタント向け研修 検討委員</li>
+          <li>企業管理部門 キャリア室顧問（複数社）</li>
+          <li>地域若者サポートステーション 相談員</li>
+          <li>厚労省委託 キャリア形成リスキリング支援センター</li>
+        </ul>
+      </div>
+      <div>
+        <p class="exp-block-label">CURRENT ACTIVITIES</p>
+        <div class="exp-note">
+          <strong>厚生労働省 委託事業</strong>
+          「中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修（介護分野・グリーン分野）」の検討委員として、研修開発に長年関わっています。
+        </div>
+        <ul class="exp-items" style="margin-top:1.8rem;">
+          <li>大手企業向け新入社員研修（年間複数社）</li>
+          <li>企業向け 1on1・管理職研修</li>
+          <li>メンタルヘルス研修・ハラスメント防止研修</li>
+          <li>任意団体「ブリッジフォーライフ」活動</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container">
+    <div class="phil-inner">
+      <p class="phil-quote">
+        "答えは、あなたの内側にある。<br>
+        一緒に、見つけていきましょう。"
+      </p>
+      <div class="phil-deco"></div>
+      <p class="phil-text">
+        キャリアの答えは、外からもらうものではなく、あなた自身の中にあります。<br>
+        私の役割は、その気づきを一緒に掘り起こすこと。<br>
+        情報を与えるのではなく、あなたが自分で動き出せるように。<br>
+        そんな関わり方を、大切にしています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics" id="topics">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-en">Topics</span>
+      <span class="sec-ja">最近の活動</span>
+    </div>
+    <div class="topic-list">
+      <div class="titem">
+        <p class="titem-date">2026</p>
+        <h3 class="titem-title">厚生労働省 キャリアコンサルタント向け研修 検討委員</h3>
+        <p class="titem-body">介護分野・グリーン分野の研修開発に携わっています。グリーン分野のオンライン説明会にも出演。現場での支援に直結する学びが多く、企業支援の視点がさらに広がっています。</p>
+      </div>
+      <div class="titem">
+        <p class="titem-date">2026</p>
+        <h3 class="titem-title">大手金融機関 新入社員研修（約200名）</h3>
+        <p class="titem-body">ビジネスマナー・エチケット研修を2時間で実施。参加者が主体的に考えられるファシリテーション設計を意識し、「なぜそのマナーが必要か」を軸にしたプログラムを展開しました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-en">Contact</span>
+      <span class="sec-ja">お問い合わせ</span>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-lead">
+          研修・コンサルティングのご依頼、<br>
+          個人相談のご予約など、<br>
+          お気軽にご連絡ください。
+        </p>
+        <p class="contact-note">
+          通常2営業日以内にご返信いたします。<br>
+          メールでのご連絡も歓迎です。<br><br>
+          <a href="mailto:r.hattori@career-blooming.com">r.hattori@career-blooming.com</a>
+        </p>
+      </div>
+      <div>
+        <div class="form-row">
+          <label class="form-label">お名前 / NAME</label>
+          <input type="text" class="form-input" placeholder="山田 太郎">
+        </div>
+        <div class="form-row">
+          <label class="form-label">メールアドレス / EMAIL</label>
+          <input type="email" class="form-input" placeholder="example@email.com">
+        </div>
+        <div class="form-row">
+          <label class="form-label">お問い合わせ内容 / MESSAGE</label>
+          <textarea class="form-textarea" placeholder="ご相談内容をご記入ください"></textarea>
+        </div>
+        <button class="form-btn">送信する</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    Career Blooming
+    <span>服部陵子 HATTORI RYOKO</span>
+  </div>
+  <div class="footer-right">
+    <a href="mailto:r.hattori@career-blooming.com" class="footer-mail">r.hattori@career-blooming.com</a>
+    <p class="footer-copy">© 2026 Career Blooming. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
