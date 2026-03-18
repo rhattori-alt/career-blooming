@@ -175,7 +175,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 5%;
+    object-position: center top;
     opacity: 0.75;
   }
   .hero-deco {
@@ -748,20 +748,20 @@
       <div>
         <p class="exp-block-label">CAREER HISTORY</p>
         <ul class="exp-items">
-          <li>全日本空輸株式会社（客室乗務員）</li>
+          <li>国内大手航空会社（客室乗務員・地上職）</li>
           <li>人材派遣会社 キャリアコンサルタント</li>
-          <li>厚労省委託事業 セルフキャリアドック事業　キャリアコンサルタント</li>
+          <li>厚労省委託事業 セルフキャリアドック事業</li>
           <li>厚労省委託事業 キャリアコンサルタント向け研修 検討委員</li>
           <li>企業管理部門 キャリア室顧問（複数社）</li>
           <li>地域若者サポートステーション 相談員</li>
-          
+          <li>厚労省委託 キャリア形成リスキリング支援センター</li>
         </ul>
       </div>
       <div>
         <p class="exp-block-label">CURRENT ACTIVITIES</p>
         <div class="exp-note">
           <strong>厚生労働省 委託事業</strong>
-          「中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修」の検討委員として、研修開発に長年関わっています。
+          「中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修（介護分野・グリーン分野）」の検討委員として、研修開発に長年関わっています。
         </div>
         <ul class="exp-items" style="margin-top:1.8rem;">
           <li>大手企業向け新入社員研修（年間複数社）</li>
@@ -779,7 +779,7 @@
   <div class="container">
     <div class="phil-inner">
       <p class="phil-quote">
-        「キャリア」と聞いて、<br>身構えませんか？
+        「キャリア研修」と聞いて、<br>身構えませんか？
       </p>
       <div class="phil-deco"></div>
       <p class="phil-text">
@@ -844,25 +844,19 @@
         </p>
       </div>
       <div>
+        <form action="https://formspree.io/f/xqeywpgj" method="POST">
         <div class="form-row">
           <label class="form-label">お名前 / NAME</label>
-          <input type="text" class="form-input" placeholder="山田 太郎">
+          <input type="text" name="name" class="form-input" placeholder="山田 太郎" required>
         </div>
         <div class="form-row">
           <label class="form-label">メールアドレス / EMAIL</label>
-          <input type="email" class="form-input" placeholder="example@email.com">
+          <input type="email" name="email" class="form-input" placeholder="example@email.com" required>
         </div>
         <div class="form-row">
           <label class="form-label">お問い合わせ内容 / MESSAGE</label>
-          <textarea class="form-textarea" placeholder="ご相談内容をご記入ください"></textarea>
+          <textarea name="message" class="form-textarea" placeholder="ご相談内容をご記入ください" required></textarea>
         </div>
-        <button class="form-btn">送信する</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">
-    Career
+        <button type="submit" class="form-btn">送信する</button>
+        </form>
+        
