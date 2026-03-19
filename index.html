@@ -357,16 +357,12 @@
 
   /* EXPERIENCE */
   .experience { background: var(--bg); }
-  .exp-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
+  .exp-layout { }
   .exp-block-label {
     font-size: 0.63rem;
     letter-spacing: 0.28em;
     color: var(--caramel-d);
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -376,22 +372,27 @@
     flex: 1; height: 1px;
     background: var(--caramel-l);
   }
-  .exp-items { list-style: none; }
+  .exp-items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
   .exp-items li {
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 0.92rem;
+    background: var(--warm);
+    padding: 1.2rem 1.4rem;
+    font-size: 0.82rem;
     color: var(--mid);
     line-height: 1.7;
-    display: flex;
-    gap: 0.8rem;
-    align-items: baseline;
+    border-radius: 2px;
+    border-top: 2px solid var(--caramel-l);
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .exp-items li::before {
-    content: '›';
-    color: var(--caramel);
-    flex-shrink: 0;
+  .exp-items li:hover {
+    border-top-color: var(--caramel);
+    box-shadow: 0 4px 16px rgba(61,43,31,0.07);
   }
+  .exp-items li::before { display: none; }
   .exp-note {
     margin-top: 2rem;
     background: var(--warm);
@@ -678,7 +679,8 @@
         <p class="about-body">
           新卒で全日本空輸株式会社に入社し、結婚・出産後の復職を経て退職。2013年よりキャリアコンサルタントとして主に企業領域での支援に取り組んでいます。<br><br>
           厚生労働省が推進するセルフキャリアドック事業の導入支援や、キャリアコンサルタント向け研修の検討委員を長年にわたり務めるなど、制度と現場の両面から企業のキャリア支援に携わってきました。<br><br>
-          現在は、企業のキャリア支援施策の設計・運用、社員向けキャリア研修、復職支援、個人向けキャリアコンサルティング面談などを中心に活動しています。国家資格公認心理師の資格も持ち、メンタルヘルスの側面からも支援を行っています。
+          現在は、企業のキャリア支援施策の設計・運用、社員向けキャリア研修、復職支援、個人向けキャリアコンサルティング面談などを中心に活動しています。国家資格公認心理師の資格も持ち、メンタルヘルスの側面からも支援を行っています。<br><br>
+          また、子育て・介護・キャリアの両立支援を目的とした任意団体「<a href="https://bridgeforlife07.wixsite.com/bridge-for-life" target="_blank" style="color:var(--caramel-d);text-decoration:none;">ブリッジフォーライフ</a>」の活動にも取り組んでいます。
         </p>
         <div class="tags">
           <span class="tag">国家資格キャリアコンサルタント</span>
@@ -720,6 +722,7 @@
         <ul class="scard-list">
           <li>新入社員研修（ビジネスマナー等）</li>
           <li>メンタルヘルス研修</li>
+          <li>ハラスメント防止研修</li>
           <li>管理職・リーダー向けキャリア研修</li>
           <li>復職・両立支援研修</li>
         </ul>
@@ -790,25 +793,12 @@
         <ul class="exp-items">
           <li>全日本空輸株式会社（客室乗務員）</li>
           <li>人材派遣会社 キャリアコンサルタント</li>
-          <li>厚労省委託事業 キャリアコンサルタント向け研修 検討委員</li>
-          <li>厚労省委託事業 セルフキャリアドック・キャリア形成支援センター</li>
-          <li>企業管理部門 キャリア室顧問（複数社）</li>
+          <li>厚生労働省委託事業<br><a href="https://carigaku.mhlw.go.jp/" target="_blank" style="color:var(--caramel-d);text-decoration:none;">キャリア形成リスキリング推進事業<br>セルフキャリアドック担当</a></li>
+          <li>厚生労働省委託事業<br><a href="https://kunren-careerconsultant.mhlw.go.jp/" target="_blank" style="color:var(--caramel-d);text-decoration:none;">中長期的なキャリア形成を支援するための<br>キャリアコンサルタント向け研修 検討委員</a></li>
+          <li><a href="https://www.abc.jp/service/anakenshu/instructor/087" target="_blank" style="color:var(--caramel-d);text-decoration:none;">ANAビジネスソリューション株式会社 登録講師</a></li>
+          <li>食品会社・運送会社 キャリア室顧問</li>
+          <li>企業向けセルフキャリアドック（複数社）</li>
           <li>地域若者サポートステーション 相談員</li>
-        </ul>
-      </div>
-      <div>
-        <p class="exp-block-label">CURRENT ACTIVITIES</p>
-        <div class="exp-note">
-          <strong>厚生労働省 委託事業</strong>
-          「中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修」の検討委員として、IT・若者支援・中高年齢者・外国人支援・育児介護との両立・セルフキャリアドックなど多分野の研修開発に長年関わっています。<br>
-          <a href="https://kunren-careerconsultant.mhlw.go.jp/" target="_blank" style="font-size:0.75rem;color:var(--green-d);text-decoration:none;">▶ 研修サイトはこちら</a>
-        </div>
-        <ul class="exp-items" style="margin-top:1.8rem;">
-          <li><a href="https://www.abc.jp/service/anakenshu/instructor/087" target="_blank" style="color:var(--caramel-d);text-decoration:none;">ANAビジネスソリューション 登録講師</a></li>
-          <li>大手企業向け新入社員研修（年間複数社）</li>
-          <li>企業向け 1on1・管理職研修</li>
-          <li>メンタルヘルス研修・ハラスメント防止研修</li>
-          <li><a href="https://bridgeforlife07.wixsite.com/bridge-for-life" target="_blank" style="color:var(--caramel-d);text-decoration:none;">任意団体「ブリッジフォーライフ」活動</a></li>
         </ul>
       </div>
     </div>
