@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>キャリアブルーミング｜服部陵子 - 一歩前に、なりたい自分へ。</title>
   <meta name="description" content="1級キャリアコンサルティング技能士・公認心理師の服部陵子が、個人のキャリア相談から企業の離職率改善・定着率向上・人的資本経営・セルフキャリアドック導入支援まで幅広く対応。東京・全国オンライン対応。">
+  <link rel="icon" href="favicon.png" type="image/png">
   <meta name="keywords" content="キャリアコンサルタント,セルフキャリアドック,離職率改善,定着率向上,人的資本経営,社員研修,1級キャリアコンサルティング技能士,エンゲージメント向上,組織開発,キャリア相談">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +14,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #faf7f2;
-      --warm-white: #fffef9;
+      --cream: #ede7db;
+      --warm-white: #f4efe6;
       --deep-green: #2d4a3e;
       --sage: #7a9e8e;
       --sage-light: rgba(122,158,142,0.12);
       --gold: #b8965a;
-      --charcoal: #2c2c2c;
-      --mid-gray: #666;
+      --charcoal: #111;
+      --mid-gray: #333;
       --light-gray: #e8e4de;
       --corporate-dark: #1a2e3a;
       --corporate-accent: #b8965a;
@@ -57,7 +58,7 @@
     .nav-links a {
       font-size: 0.76rem;
       letter-spacing: 0.15em;
-      color: var(--mid-gray);
+      color: #555;
       text-decoration: none;
       text-transform: uppercase;
       transition: color 0.2s;
@@ -144,7 +145,7 @@
     }
     .hero-sub {
       font-size: 0.9rem;
-      color: var(--mid-gray);
+      color: #333;
       line-height: 2;
       max-width: 380px;
       margin-bottom: 3rem;
@@ -207,16 +208,17 @@
     }
     .section-title {
       font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-      font-weight: 400;
-      line-height: 1.5;
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.4;
       color: var(--deep-green);
       margin-bottom: 2rem;
+      letter-spacing: 0.01em;
     }
 
     /* ── CORPORATE ── */
-    #corporate { background: linear-gradient(160deg, #3a2e1a 0%, #2d4a3e 60%, #1e3a2e 100%); padding: 7rem 0; }
-    #corporate .section-label { color: rgba(184,150,90,0.8); }
+    #corporate { background: linear-gradient(160deg, #2a3d2e 0%, #2d4a3e 50%, #1e3830 100%); padding: 7rem 0; }
+    #corporate .section-label { color: rgba(184,150,90,0.85); }
     #corporate .section-title { color: #fff; }
 
     .corporate-intro {
@@ -230,9 +232,9 @@
     .corporate-lead {
       font-family: var(--font-serif);
       font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.95);
       line-height: 1.8;
-      font-weight: 300;
+      font-weight: 400;
     }
     .corporate-lead em {
       color: var(--corporate-accent);
@@ -241,7 +243,7 @@
     }
     .corporate-body {
       font-size: 0.88rem;
-      color: rgba(255,255,255,0.82);
+      color: rgba(220,240,230,0.95);
       line-height: 2.1;
     }
     .corporate-body p + p { margin-top: 1.2rem; }
@@ -249,45 +251,46 @@
     .stat-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
       margin-bottom: 4rem;
     }
     .stat-item {
       padding: 2.5rem 2rem;
       text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.08);
+      border-right: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
     }
     .stat-item:last-child { border-right: none; }
     .stat-number {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3rem;
       font-weight: 300;
-      color: var(--corporate-accent);
+      color: var(--gold);
       line-height: 1;
       margin-bottom: 0.6rem;
     }
     .stat-label {
       font-size: 0.76rem;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255,255,255,0.75);
       line-height: 1.7;
     }
 
     .scd-highlight {
-      border-left: 2px solid var(--corporate-accent);
+      border-left: 2px solid var(--gold);
       padding: 2rem 2.5rem;
       margin-bottom: 4rem;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.09);
     }
     .scd-highlight-title {
       font-family: var(--font-serif);
       font-size: 1rem;
-      color: var(--corporate-accent);
+      color: var(--gold);
       margin-bottom: 0.8rem;
       font-weight: 400;
     }
     .scd-highlight-body {
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.82);
+      color: rgba(255,255,255,0.85);
       line-height: 1.9;
     }
 
@@ -295,31 +298,37 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.08);
     }
     .corp-service-item {
-      background: var(--corporate-dark);
-      padding: 2.5rem;
+      background: rgba(255,255,255,0.07);
+      padding: 2.8rem 2.5rem;
       transition: background 0.2s;
+      border-top: 2px solid transparent;
     }
-    .corp-service-item:hover { background: rgba(255,255,255,0.04); }
+    .corp-service-item:hover {
+      background: rgba(255,255,255,0.05);
+      border-top-color: var(--gold);
+    }
     .corp-service-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      color: rgba(184,150,90,0.25);
+      font-size: 2rem;
+      color: var(--gold);
       line-height: 1;
       margin-bottom: 1rem;
+      opacity: 0.6;
     }
     .corp-service-title {
       font-family: var(--font-serif);
-      font-size: 0.98rem;
+      font-size: 1.15rem;
       color: #fff;
-      margin-bottom: 0.8rem;
-      font-weight: 400;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
     .corp-service-body {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.78);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.82);
       line-height: 1.9;
     }
     .corp-tags {
@@ -329,10 +338,11 @@
       gap: 0.4rem;
     }
     .corp-tag {
-      font-size: 0.68rem;
-      padding: 0.2rem 0.65rem;
-      border: 1px solid rgba(184,150,90,0.35);
-      color: rgba(184,150,90,0.8);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.8rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      letter-spacing: 0.05em;
     }
 
     .corp-cta {
@@ -340,8 +350,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      border: 1px solid var(--corporate-accent);
-      color: var(--corporate-accent);
+      border: 1px solid var(--gold);
+      color: var(--gold);
       padding: 0.9rem 2.5rem;
       font-size: 0.82rem;
       letter-spacing: 0.12em;
@@ -349,7 +359,7 @@
       transition: all 0.25s;
     }
     .corp-cta::after { content: '→'; transition: transform 0.25s; }
-    .corp-cta:hover { background: var(--corporate-accent); color: #fff; }
+    .corp-cta:hover { background: var(--gold); color: #fff; }
     .corp-cta:hover::after { transform: translateX(4px); }
 
     /* ── ABOUT ── */
@@ -432,8 +442,8 @@
     .ind-service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: var(--light-gray);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
     }
     .ind-service-item {
       background: var(--warm-white);
@@ -448,10 +458,11 @@
     }
     .ind-service-title {
       font-family: var(--font-serif);
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       color: var(--deep-green);
       margin-bottom: 0.8rem;
       font-weight: 500;
+      letter-spacing: 0.02em;
     }
     .ind-service-body {
       font-size: 0.81rem;
@@ -464,8 +475,8 @@
       align-items: center;
       gap: 0.8rem;
       margin-top: 3rem;
-      border: 1px solid var(--deep-green);
-      color: var(--deep-green);
+      border: 1px solid var(--gold);
+      color: var(--gold);
       padding: 0.9rem 2.2rem;
       font-size: 0.82rem;
       letter-spacing: 0.1em;
@@ -482,7 +493,7 @@
     .philosophy-text {
       font-family: var(--font-serif);
       font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-      color: rgba(255,255,255,0.82);
+      color: rgba(255,255,255,0.95);
       line-height: 2.3;
       max-width: 700px;
       font-weight: 300;
@@ -494,8 +505,8 @@
     .fee-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      background: var(--light-gray);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
       margin-top: 2.5rem;
     }
     .fee-item {
@@ -581,7 +592,7 @@
     #contact .section-title { color: #fff; }
     .contact-lead {
       font-size: 0.88rem;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.88);
       line-height: 2;
       margin-bottom: 3rem;
       max-width: 500px;
@@ -628,7 +639,7 @@
     .form-submit:hover { background: var(--corporate-accent); color: #fff; }
     .privacy-note {
       font-size: 0.76rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.65);
       line-height: 1.9;
       margin-top: 2rem;
       max-width: 580px;
@@ -645,12 +656,12 @@
     .footer-logo {
       font-family: var(--font-serif);
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.7);
       letter-spacing: 0.08em;
     }
     .footer-copy {
       font-size: 0.72rem;
-      color: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.5);
     }
 
     /* ── RESPONSIVE ── */
@@ -724,10 +735,10 @@
         </p>
       </div>
       <div>
-        <p class="corporate-body">
+        <div class="corporate-body">
           <p>制度を作っても、現場に届かない。研修を実施しても、日常が変わらない。そんな声をよく聞きます。</p>
           <p>背景には、組織の文脈に合っていない支援設計があることがほとんどです。個別面談の積み重ねを通じて「御社で今何が起きているか」を把握し、離職率・定着率・エンゲージメントという経営課題に直結した形で支援します。</p>
-        </p>
+        </div>
       </div>
     </div>
 
@@ -909,24 +920,6 @@
         <p class="fee-note">内容・規模・期間によりお見積もりいたします。まずは現状のご相談から。30分のオンライン相談も可能です。</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <p class="section-label">Experience</p>
-    <h2 class="section-title">これまでの取り組み</h2>
-    <ul class="exp-list">
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">全日本空輸株式会社（客室乗務員）</span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">人材派遣会社 キャリアコンサルタント</span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">厚生労働省委託事業 <a href="https://carigaku.mhlw.go.jp/" target="_blank">キャリア形成リスキリング推進事業 セルフキャリアドック担当</a></span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">厚生労働省委託事業 <a href="https://kunren-careerconsultant.mhlw.go.jp/" target="_blank">中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修 検討委員</a></span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text"><a href="https://www.abc.jp/service/anakenshu/instructor/087" target="_blank">ANAビジネスソリューション株式会社 登録講師</a></span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">食品会社・運送会社 キャリア室顧問</span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">企業向けセルフキャリアドック導入・運用支援（複数社）</span></li>
-      <li class="exp-item"><span class="exp-dot"></span><span class="exp-text">地域若者サポートステーション 相談員</span></li>
-    </ul>
   </div>
 </section>
 
