@@ -67,53 +67,70 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #c8a870 0%, #a07840 20%, #6b8f6e 55%, #2d4a3e 100%);
+      background: linear-gradient(160deg, var(--cream) 0%, #e8ede8 60%, #cfdacc 100%);
     }
     .hero-flower-wrap {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+      position: relative;
+      overflow: hidden;
+      order: 2;
     }
     .hero-flower-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.45;
+      object-position: center;
+      display: block;
     }
-    .hero-overlay {
+    .hero-flower-wrap::after {
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(184,150,90,0.5) 0%, rgba(100,130,90,0.4) 50%, rgba(30,60,45,0.72) 100%);
-      z-index: 1;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 25%),
+                  linear-gradient(to top, rgba(45,74,62,0.3) 0%, transparent 55%);
     }
+    .hero-overlay { display: none; }
     .hero-content {
       position: relative;
       z-index: 2;
+      order: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      text-align: center;
-      padding: 8rem 4rem 6rem;
+      text-align: left;
+      padding: 8rem 3rem 6rem 5rem;
       min-height: 100vh;
     }
     .hero-en {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.85rem;
       letter-spacing: 0.4em;
-      color: rgba(255,255,255,0.65);
+      color: var(--sage);
       text-transform: uppercase;
       margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.2s forwards;
     }
+    .hero-en::before {
+      content: '';
+      width: 2rem;
+      height: 1px;
+      background: var(--sage);
+      display: inline-block;
+    }
     .hero-headline {
       font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 400;
-      color: #fff;
+      color: var(--deep-green);
       line-height: 1.5;
       margin-bottom: 2rem;
       opacity: 0;
@@ -123,20 +140,21 @@
       font-style: italic;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1em;
-      color: rgba(255,240,200,0.95);
+      color: var(--gold);
     }
     .hero-sub {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      color: var(--mid-gray);
       line-height: 2;
-      max-width: 480px;
-      margin-bottom: 3.5rem;
+      max-width: 380px;
+      margin-bottom: 3rem;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.6s forwards;
     }
     .hero-choices {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
+      flex-wrap: wrap;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.8s forwards;
     }
@@ -144,34 +162,31 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 0.9rem 2.2rem;
-      font-size: 0.82rem;
+      padding: 0.85rem 1.8rem;
+      font-size: 0.8rem;
       letter-spacing: 0.1em;
       text-decoration: none;
       border: 1px solid;
       transition: all 0.25s;
-      backdrop-filter: blur(4px);
     }
     .hero-btn::after { content: '→'; transition: transform 0.25s; }
     .hero-btn:hover::after { transform: translateX(4px); }
     .hero-btn-corporate {
-      border-color: rgba(255,255,255,0.6);
-      color: #fff;
-      background: rgba(30,60,45,0.35);
+      border-color: var(--deep-green);
+      color: var(--deep-green);
+      background: transparent;
     }
     .hero-btn-corporate:hover {
       background: var(--deep-green);
-      border-color: var(--deep-green);
       color: #fff;
     }
     .hero-btn-individual {
-      border-color: rgba(184,150,90,0.8);
-      color: rgba(255,235,180,0.95);
-      background: rgba(184,150,90,0.2);
+      border-color: var(--gold);
+      color: var(--gold);
+      background: transparent;
     }
     .hero-btn-individual:hover {
       background: var(--gold);
-      border-color: var(--gold);
       color: #fff;
     }
 
@@ -206,10 +221,11 @@
 
     .corporate-intro {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
       align-items: start;
       margin-bottom: 4rem;
+      max-width: 720px;
     }
     .corporate-lead {
       font-family: var(--font-serif);
