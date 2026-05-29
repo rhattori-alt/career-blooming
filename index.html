@@ -1,79 +1,828 @@
-<!-- =====================================================
-     以下を index.html の <!-- ABOUT --> の直前に貼り付けてください
-     ===================================================== -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャリアブルーミング｜服部陵子 - 一歩前に、なりたい自分へ。</title>
+<meta name="description" content="1級キャリアコンサルティング技能士・公認心理師の服部陵子が、個人のキャリア相談から企業の離職率改善・定着率向上・人的資本経営・セルフキャリアドック導入支援まで幅広く対応。東京・全国オンライン対応。">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="keywords" content="キャリアコンサルタント,セルフキャリアドック,離職率改善,定着率向上,人的資本経営,社員研修,1級キャリアコンサルティング技能士,エンゲージメント向上,組織開発,キャリア相談">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #ede7db;
+  --warm-white: #f4efe6;
+  --deep-green: #2d4a3e;
+  --sage: #7a9e8e;
+  --sage-light: rgba(122,158,142,0.12);
+  --gold: #b8965a;
+  --charcoal: #111;
+  --mid-gray: #333;
+  --light-gray: #e8e4de;
+  --corporate-dark: #1a2e3a;
+  --corporate-accent: #b8965a;
+  --font-serif: 'Noto Serif JP', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Noto Sans JP', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--warm-white);
+  color: var(--charcoal);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 4rem;
+  background: rgba(250,247,242,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--light-gray);
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--deep-green);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--deep-green); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--cream) 0%, #e8ede8 60%, #cfdacc 100%);
+}
+.hero-flower-wrap {
+  position: relative;
+  overflow: hidden;
+  order: 2;
+}
+.hero-flower-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.hero-flower-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--cream) 0%, transparent 25%),
+              linear-gradient(to top, rgba(45,74,62,0.3) 0%, transparent 55%);
+}
+.hero-overlay { display: none; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding: 8rem 3rem 6rem 5rem;
+  min-height: 100vh;
+}
+.hero-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  color: var(--sage);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-en::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--sage);
+  display: inline-block;
+}
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--deep-green);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+.hero-headline em {
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1em;
+  color: var(--gold);
+}
+.hero-sub {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 2;
+  max-width: 380px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+}
+.hero-choices {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.8s forwards;
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border: 1px solid;
+  transition: all 0.25s;
+}
+.hero-btn::after { content: '→'; transition: transform 0.25s; }
+.hero-btn:hover::after { transform: translateX(4px); }
+.hero-btn-corporate {
+  border-color: var(--deep-green);
+  color: var(--deep-green);
+  background: transparent;
+}
+.hero-btn-corporate:hover {
+  background: var(--deep-green);
+  color: #fff;
+}
+.hero-btn-individual {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+.hero-btn-individual:hover {
+  background: var(--gold);
+  color: #fff;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTION BASE ── */
+section { padding: 6rem 0; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 4rem; }
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.8rem;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--deep-green);
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+/* ── CORPORATE ── */
+#corporate { background: linear-gradient(160deg, #2a3d2e 0%, #2d4a3e 50%, #1e3830 100%); padding: 7rem 0; }
+#corporate .section-label { color: rgba(184,150,90,0.85); }
+#corporate .section-title { color: #fff; }
+.corporate-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 4rem;
+  max-width: 720px;
+}
+.corporate-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  color: rgba(255,255,255,0.95);
+  line-height: 1.8;
+  font-weight: 400;
+}
+.corporate-lead em {
+  color: var(--corporate-accent);
+  font-style: normal;
+  font-weight: 400;
+}
+.corporate-body {
+  font-size: 0.88rem;
+  color: rgba(220,240,230,0.95);
+  line-height: 2.1;
+}
+.corporate-body p + p { margin-top: 1.2rem; }
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 4rem;
+}
+.stat-item {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.07);
+}
+.stat-item:last-child { border-right: none; }
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.stat-label {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+.scd-highlight {
+  border-left: 2px solid var(--gold);
+  padding: 2rem 2.5rem;
+  margin-bottom: 4rem;
+  background: rgba(255,255,255,0.09);
+}
+.scd-highlight-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+}
+.scd-highlight-body {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.9;
+}
+.corp-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+}
+.corp-service-item {
+  background: rgba(255,255,255,0.07);
+  padding: 2.8rem 2.5rem;
+  transition: background 0.2s;
+  border-top: 2px solid transparent;
+}
+.corp-service-item:hover {
+  background: rgba(255,255,255,0.05);
+  border-top-color: var(--gold);
+}
+.corp-service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+.corp-service-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.corp-service-body {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.9;
+}
+.corp-tags {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.corp-tag {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.corp-cta {
+  margin-top: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.9rem 2.5rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.corp-cta::after { content: '→'; transition: transform 0.25s; }
+.corp-cta:hover { background: var(--gold); color: #fff; }
+.corp-cta:hover::after { transform: translateX(4px); }
+
+/* ── ABOUT ── */
+#about { background: var(--cream); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+.about-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--deep-green);
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+.about-title {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--sage);
+  margin-bottom: 2rem;
+}
+.about-body {
+  font-size: 0.88rem;
+  color: var(--mid-gray);
+  line-height: 2.1;
+  margin-bottom: 2rem;
+}
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.cred-tag {
+  font-size: 0.7rem;
+  padding: 0.28rem 0.8rem;
+  border: 1px solid var(--light-gray);
+  color: var(--mid-gray);
+}
+.cred-tag.primary {
+  border-color: var(--sage);
+  color: var(--deep-green);
+}
+
+/* ── INDIVIDUAL ── */
+#individual { background: var(--warm-white); }
+.individual-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 3.5rem;
+}
+.individual-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  color: var(--deep-green);
+  line-height: 1.8;
+  font-weight: 400;
+}
+.individual-lead em {
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05em;
+}
+.individual-body {
+  font-size: 0.88rem;
+  color: var(--mid-gray);
+  line-height: 2.1;
+}
+.individual-body p + p { margin-top: 1.2rem; }
+.ind-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+}
+.ind-service-item {
+  background: var(--warm-white);
+  padding: 2.5rem 2rem;
+}
+.ind-service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: rgba(122,158,142,0.2);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.ind-service-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--deep-green);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.ind-service-body {
+  font-size: 0.81rem;
+  color: var(--mid-gray);
+  line-height: 1.9;
+}
+.ind-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.9rem 2.2rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.ind-cta::after { content: '→'; transition: transform 0.25s; }
+.ind-cta:hover { background: var(--deep-green); color: #fff; }
+.ind-cta:hover::after { transform: translateX(4px); }
+
+/* ── PHILOSOPHY ── */
+#philosophy { background: var(--deep-green); padding: 7rem 0; }
+#philosophy .section-label { color: rgba(255,255,255,0.3); }
+.philosophy-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  color: rgba(255,255,255,0.95);
+  line-height: 2.3;
+  max-width: 700px;
+  font-weight: 300;
+}
+.philosophy-text strong { color: #fff; font-weight: 400; }
+
+/* ── FEE ── */
+#fee { background: var(--cream); }
+.fee-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-top: 2.5rem;
+}
+.fee-item {
+  background: var(--cream);
+  padding: 3rem;
+}
+.fee-type {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1rem;
+}
+.fee-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--deep-green);
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+.fee-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  color: var(--charcoal);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.fee-note {
+  font-size: 0.82rem;
+  color: var(--mid-gray);
+  line-height: 1.9;
+}
+
+/* ── TOPICS ── */
+#topics { background: var(--warm-white); }
+.topic-item {
+  display: flex;
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+.topic-date {
+  font-size: 0.76rem;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  padding-top: 0.2rem;
+}
+.topic-title {
+  font-size: 0.87rem;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+/* ── CONTACT ── */
+#contact { background: linear-gradient(160deg, #2d4a3e 0%, #1e3a2e 100%); padding: 7rem 0; }
+#contact .section-label { color: rgba(255,255,255,0.3); }
+#contact .section-title { color: #fff; }
+.contact-lead {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+.contact-form { display: grid; gap: 1.2rem; max-width: 580px; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.form-input, .form-textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--corporate-accent); }
+.form-textarea { min-height: 140px; resize: vertical; }
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--corporate-accent);
+  color: var(--corporate-accent);
+  padding: 0.9rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--corporate-accent); color: #fff; }
+.privacy-note {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.9;
+  margin-top: 2rem;
+  max-width: 580px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #111;
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em;
+}
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.2rem; }
+  .nav-links a { font-size: 0.7rem; }
+  .container { padding: 0 1.8rem; }
+  .hero { padding: 7rem 2rem 5rem; }
+  .hero-choices { flex-direction: column; align-items: center; }
+  .corporate-intro, .individual-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { width: 180px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .corp-service-grid { grid-template-columns: 1fr; }
+  .ind-service-grid { grid-template-columns: 1fr; }
+  .fee-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; padding: 2rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">キャリアブルーミング<span style="display:block;font-size:0.65rem;letter-spacing:0.2em;color:var(--sage);font-family:var(--font-sans);font-weight:300;">Career Blooming</span></a>
+  <ul class="nav-links">
+    <li><a href="#corporate">企業の方へ</a></li>
+    <li><a href="#individual">個人の方へ</a></li>
+    <li><a href="#about">Profile</a></li>
+    <li><a href="#fee">Fee</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-flower-wrap">
+    <img src="flower.jpg" alt="" class="hero-flower-img">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-en">Career Blooming</p>
+    <h1 class="hero-headline">一歩前に、<br><em>なりたい自分へ。</em></h1>
+    <p class="hero-sub">
+      個人のキャリア相談から、<br>
+      企業の人材・組織課題まで。<br>
+      一人ひとりが前に進めるよう、<br>
+      一緒に考えていきます。
+    </p>
+    <div class="hero-choices">
+      <a href="#corporate" class="hero-btn hero-btn-corporate">企業の方はこちら</a>
+      <a href="#individual" class="hero-btn hero-btn-individual">個人の方はこちら</a>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE -->
+<section id="corporate">
+  <div class="container">
+    <p class="section-label">For Corporate</p>
+    <h2 class="section-title">社員が前に進める組織が、<br>強い。</h2>
+    <div class="corporate-intro">
+      <div>
+        <p class="corporate-lead">
+          人的資本経営が求められる今、<br>
+          <em>社員一人ひとりの成長</em>が<br>
+          組織の力になる時代です。
+        </p>
+      </div>
+      <div>
+        <div class="corporate-body">
+          <p>制度を作っても、現場に届かない。研修を実施しても、日常が変わらない。そんな声をよく聞きます。</p>
+          <p>背景には、組織の文脈に合っていない支援設計があることがほとんどです。個別面談の積み重ねを通じて「御社で今何が起きているか」を把握し、離職率・定着率・エンゲージメントという経営課題に直結した形で支援します。</p>
+        </div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-number">3,000+</div>
+        <div class="stat-label">累計キャリア支援実績<br>（個人・企業）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">13</div>
+        <div class="stat-label">独立開業からの年数<br>（2013年〜）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1級</div>
+        <div class="stat-label">キャリアコンサルティング技能士<br>（最上位国家資格）</div>
+      </div>
+    </div>
+    <div class="scd-highlight">
+      <p class="scd-highlight-title">セルフキャリアドック（SCD）導入支援</p>
+      <p class="scd-highlight-body">
+        セルフキャリアドックは、厚生労働省が推進する企業内キャリア支援の仕組みです。社員がキャリアの節目ごとに定期的な面談・研修を受けることで、定着率の向上・自己啓発の促進・エンゲージメント改善に効果があることが確認されています。代表の服部は、厚生労働省委託の普及事業に長年携わってきた専門家として、制度設計から現場運用まで一貫して支援します。
+      </p>
+    </div>
+    <div class="corp-service-grid">
+      <div class="corp-service-item">
+        <div class="corp-service-num">01</div>
+        <h3 class="corp-service-title">セルフキャリアドック導入・運用支援</h3>
+        <p class="corp-service-body">制度設計から面談実施、経営への報告まで一貫して担います。御社の規模・業種・課題に合った形で、実効性ある仕組みを構築します。</p>
+        <div class="corp-tags">
+          <span class="corp-tag">離職率改善</span>
+          <span class="corp-tag">定着率向上</span>
+          <span class="corp-tag">人的資本経営</span>
+        </div>
+      </div>
+      <div class="corp-service-item">
+        <div class="corp-service-num">02</div>
+        <h3 class="corp-service-title">キャリアコンサルティング面談</h3>
+        <p class="corp-service-body">社員との個別面談を通じて組織に潜む課題を把握。守秘義務を守りながら、組織レベルの示唆として経営に届けます。</p>
+        <div class="corp-tags">
+          <span class="corp-tag">エンゲージメント向上</span>
+          <span class="corp-tag">組織課題の可視化</span>
+        </div>
+      </div>
+      <div class="corp-service-item">
+        <div class="corp-service-num">03</div>
+        <h3 class="corp-service-title">管理職・1on1研修</h3>
+        <p class="corp-service-body">上司との対話の質が、組織を変える。管理職向けの実践的な研修で、現場のマネジメント力を高めます。</p>
+        <div class="corp-tags">
+          <span class="corp-tag">管理職育成</span>
+          <span class="corp-tag">1on1トレーニング</span>
+        </div>
+      </div>
+      <div class="corp-service-item">
+        <div class="corp-service-num">04</div>
+        <h3 class="corp-service-title">新入社員・階層別研修</h3>
+        <p class="corp-service-body">ビジネスマナー・メンタルヘルス・キャリアデザインなど、成長段階に合わせた研修を設計・実施。ANAビジネスソリューション登録講師としての実績があります。</p>
+        <div class="corp-tags">
+          <span class="corp-tag">新入社員研修</span>
+          <span class="corp-tag">ビジネスマナー</span>
+          <span class="corp-tag">メンタルヘルス</span>
+        </div>
+      </div>
+    </div>
+    <a href="#contact" class="corp-cta">まずは相談する</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Profile</p>
+    <div class="about-grid">
+      <div>
+        <img src="photo.png" alt="服部陵子" class="about-photo">
+      </div>
+      <div>
+        <h2 class="about-name">服部 陵子</h2>
+        <p class="about-title">Hattori Ryoko Career Blooming 代表</p>
+        <p class="about-body">
+          国家資格キャリアコンサルタント・公認心理師として、企業と個人のキャリアを支援しています。
+          <br><br>
+          新卒で全日本空輸株式会社に入社。客室乗務員として勤務後、退職。2013年よりキャリアコンサルタントとして独立し、これまで累計約3,000名のキャリア支援を行ってきました。
+          <br><br>
+          厚生労働省委託のセルフキャリアドック普及事業、キャリアコンサルタント向け研修の検討委員を長年務めるなど、制度と現場の両面から企業のキャリア支援に携わってきました。2025年、最難関とされる1級キャリアコンサルティング技能士を取得。
+          <br><br>
+          子育て・介護・キャリアの両立支援を目的とした任意団体「ブリッジフォーライフ」の活動にも取り組んでいます。
+        </p>
+        <div class="credentials">
+          <span class="cred-tag primary">1級キャリアコンサルティング技能士</span>
+          <span class="cred-tag primary">国家資格キャリアコンサルタント</span>
+          <span class="cred-tag primary">公認心理師</span>
+          <span class="cred-tag">JCDA認定CDA</span>
+          <span class="cred-tag">メンタルヘルスマネジメントⅡ種</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- RESULTS -->
-<section id="results" style="background: var(--warm-white); padding: 6rem 0;">
+<section id="results" style="background:var(--cream); padding:6rem 0;">
   <div class="container">
     <p class="section-label">Results</p>
     <h2 class="section-title">支援実績</h2>
-
     <p style="font-size:0.88rem; color:var(--mid-gray); line-height:2; margin-bottom:3rem; max-width:640px;">
-      業種・規模・課題を問わず、組織の文脈に深く入り込んだ支援を行ってきました。
-      以下はその一部です（企業名はご要望により非公開）。
+      業種・規模・課題を問わず、組織の文脈に深く入り込んだ支援を行ってきました。以下はその一部です（企業名はご要望により非公開）。
     </p>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--light-gray);">
 
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--light-gray);
-    ">
-
-      <!-- 1 -->
-      <div style="
-        background: var(--warm-white);
-        padding: 2.8rem 2.5rem;
-        border-top: 2px solid var(--gold);
-      ">
-        <p style="
-          font-size:0.7rem;
-          letter-spacing:0.25em;
-          text-transform:uppercase;
-          color:var(--sage);
-          margin-bottom:0.8rem;
-        ">FOOD & BEVERAGE</p>
-        <h3 style="
-          font-family:var(--font-serif);
-          font-size:1.05rem;
-          color:var(--deep-green);
-          font-weight:500;
-          margin-bottom:1rem;
-        ">大手食品会社</h3>
-        <p style="font-size:0.84rem; color:var(--mid-gray); line-height:1.9; margin-bottom:1.2rem;">
-          経理部門にてキャリア研修を設計・実施。
-          継続的な個別キャリア面談を担当し、社員の自律的なキャリア形成を支援。
-        </p>
+      <div style="background:var(--cream); padding:2.8rem 2.5rem; border-top:2px solid var(--gold);">
+        <p style="font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); margin-bottom:0.8rem;">FOOD &amp; BEVERAGE</p>
+        <h3 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--deep-green); font-weight:500; margin-bottom:1rem;">大手食品会社</h3>
+        <p style="font-size:0.84rem; color:var(--mid-gray); line-height:1.9; margin-bottom:1.2rem;">経理部門にてキャリア研修を設計・実施。継続的な個別キャリア面談を担当し、社員の自律的なキャリア形成を支援。</p>
         <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
           <span class="corp-tag" style="border-color:var(--sage); color:var(--sage);">キャリア研修</span>
           <span class="corp-tag" style="border-color:var(--sage); color:var(--sage);">個別面談</span>
         </div>
       </div>
 
-      <!-- 3 -->
-      <div style="
-        background: var(--warm-white);
-        padding: 2.8rem 2.5rem;
-        border-top: 2px solid transparent;
-      ">
-        <p style="
-          font-size:0.7rem;
-          letter-spacing:0.25em;
-          text-transform:uppercase;
-          color:var(--sage);
-          margin-bottom:0.8rem;
-        ">LOGISTICS</p>
-        <h3 style="
-          font-family:var(--font-serif);
-          font-size:1.05rem;
-          color:var(--deep-green);
-          font-weight:500;
-          margin-bottom:1rem;
-        ">運輸会社</h3>
-        <p style="font-size:0.84rem; color:var(--mid-gray); line-height:1.9; margin-bottom:1.2rem;">
-          飲食部門の新規事業立ち上げ期に参画。
-          中途採用研修・チームビルディング・クレーム対応研修・接遇チェック・店長とのキャリア面談を一貫して担当。
-        </p>
+      <div style="background:var(--cream); padding:2.8rem 2.5rem; border-top:2px solid transparent;">
+        <p style="font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); margin-bottom:0.8rem;">LOGISTICS</p>
+        <h3 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--deep-green); font-weight:500; margin-bottom:1rem;">運輸会社</h3>
+        <p style="font-size:0.84rem; color:var(--mid-gray); line-height:1.9; margin-bottom:1.2rem;">飲食部門の新規事業立ち上げ期に参画。中途採用研修・チームビルディング・クレーム対応研修・接遇チェック・店長とのキャリア面談を一貫して担当。</p>
         <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
           <span class="corp-tag" style="border-color:var(--sage); color:var(--sage);">新規事業支援</span>
           <span class="corp-tag" style="border-color:var(--sage); color:var(--sage);">チームビルディング</span>
@@ -81,49 +830,151 @@
         </div>
       </div>
 
-      <!-- 4 -->
-      <div style="
-        background: var(--warm-white);
-        padding: 2.8rem 2.5rem;
-        border-top: 2px solid transparent;
-      ">
-        <p style="
-          font-size:0.7rem;
-          letter-spacing:0.25em;
-          text-transform:uppercase;
-          color:var(--sage);
-          margin-bottom:0.8rem;
-        ">ADVERTISING</p>
-        <h3 style="
-          font-family:var(--font-serif);
-          font-size:1.05rem;
-          color:var(--deep-green);
-          font-weight:500;
-          margin-bottom:1rem;
-        ">大手広告会社</h3>
-        <p style="font-size:0.84rem; color:var(--mid-gray); line-height:1.9; margin-bottom:1.2rem;">
-          厚生労働省推進のセルフキャリアドック（SCD）を活用した個別面談を実施。
-          40代・20代3年目社員のキャリア自律を支援。
-        </p>
+      <div style="background:var(--cream); padding:2.8rem 2.5rem; border-top:2px solid transparent;">
+        <p style="font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--sage); margin-bottom:0.8rem;">ADVERTISING</p>
+        <h3 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--deep-green); font-weight:500; margin-bottom:1rem;">大手広告会社</h3>
+        <p style="font-size:0.84rem; color:var(--mid-gray); line-height:1.9; margin-bottom:1.2rem;">厚生労働省推進のセルフキャリアドック（SCD）を活用した個別面談を実施。40代・20代3年目社員のキャリア自律を支援。</p>
         <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
           <span class="corp-tag" style="border-color:var(--sage); color:var(--sage);">セルフキャリアドック</span>
           <span class="corp-tag" style="border-color:var(--sage); color:var(--sage);">個別面談</span>
         </div>
       </div>
 
-    </div><!-- /grid -->
-
-    <p style="
-      font-size:0.76rem;
-      color:#aaa;
-      margin-top:1.5rem;
-      letter-spacing:0.05em;
-    ">※ 企業名は守秘義務のため匿名としています。</p>
-
+    </div>
+    <p style="font-size:0.76rem; color:#aaa; margin-top:1.5rem; letter-spacing:0.05em;">※ 企業名は守秘義務のため匿名としています。</p>
   </div>
 </section>
 
-<!-- =====================================================
-     ナビゲーションにも以下を追加してください（任意）
-     <li><a href="#results">実績</a></li>
-     ===================================================== -->
+<!-- INDIVIDUAL -->
+<section id="individual">
+  <div class="container">
+    <p class="section-label">For Individual</p>
+    <h2 class="section-title">まずは、自分のことを<br>言葉にする時間から。</h2>
+    <div class="individual-intro">
+      <div>
+        <p class="individual-lead">
+          「悩んでいるわけでは<br>ないんです。<br>でも、このままで<br><em>いいのかな</em>と思うことは<br>ありますね。」
+        </p>
+      </div>
+      <div>
+        <div class="individual-body">
+          <p>そんな声をよく聞きます。悩むから相談するのではなく、まずは立ち止まって「これから」を考える時間を一緒に作りましょう。</p>
+          <p>自分は何を大切にしているのか。何に腹が立って、何に燃えるのか。それを少しずつ言葉にしていくことで、仕事との向き合い方は確実に変わっていきます。</p>
+          <p>一歩前に、なりたい自分へ。そのための時間を、一緒につくります。</p>
+        </div>
+      </div>
+    </div>
+    <div class="ind-service-grid">
+      <div class="ind-service-item">
+        <div class="ind-service-num">01</div>
+        <h3 class="ind-service-title">キャリアコンサルティング面談</h3>
+        <p class="ind-service-body">転職・復職・今後の方向性など、一人ひとりの状況に合わせてじっくりお話を聞きます。オンライン対応可。</p>
+      </div>
+      <div class="ind-service-item">
+        <div class="ind-service-num">02</div>
+        <h3 class="ind-service-title">転職・復職支援</h3>
+        <p class="ind-service-body">職場復帰や転職を考えている方の不安を整理し、自分らしい選択ができるよう支援します。</p>
+      </div>
+      <div class="ind-service-item">
+        <div class="ind-service-num">03</div>
+        <h3 class="ind-service-title">育児・介護との両立相談</h3>
+        <p class="ind-service-body">ライフイベントとキャリアの折り合いに悩む方へ。公認心理師の視点も交えながら、現実的な選択肢を一緒に考えます。</p>
+      </div>
+    </div>
+    <a href="#contact" class="ind-cta">まずは相談してみる</a>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="container">
+    <p class="section-label">Philosophy</p>
+    <p class="philosophy-text">
+      「キャリア」と聞いて、少し身構えてしまう——そんな方は少なくありません。<br><br>
+      何か明確な答えを出さなければいけない、将来をきちんと描かなければいけない——そう思うほど、立ち止まってしまう。<br><br>
+      でも本来、<strong>キャリアはもっとシンプルなものです。</strong><br><br>
+      自分は何を大切にしているのか。何に腹が立って、何に燃えるのか。<br>
+      そこから始まる問いが、仕事の向き合い方を、組織の空気を、少しずつ変えていく。<br><br>
+      <strong>一歩前に、なりたい自分へ。</strong><br>
+      その一歩を、一緒に踏み出しましょう。
+    </p>
+  </div>
+</section>
+
+<!-- FEE -->
+<section id="fee">
+  <div class="container">
+    <p class="section-label">Fee</p>
+    <h2 class="section-title">料金案内</h2>
+    <div class="fee-grid">
+      <div class="fee-item">
+        <p class="fee-type">Personal</p>
+        <h3 class="fee-title">個人向けキャリアコンサルティング面談</h3>
+        <p class="fee-price">¥10,000〜</p>
+        <p class="fee-note">1回60分。オンライン対応可。初回のご相談はまずお気軽にお問い合わせください。</p>
+      </div>
+      <div class="fee-item">
+        <p class="fee-type">Corporate</p>
+        <h3 class="fee-title">企業向け研修・キャリア支援</h3>
+        <p class="fee-price">お見積もり</p>
+        <p class="fee-note">内容・規模・期間によりお見積もりいたします。まずは現状のご相談から。30分のオンライン相談も可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="container">
+    <p class="section-label">Topics</p>
+    <h2 class="section-title">最近の活動</h2>
+    <div class="topic-item">
+      <span class="topic-date">2026.04</span>
+      <p class="topic-title">厚生労働省委託事業「中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修」検討委員 再任</p>
+    </div>
+    <div class="topic-item">
+      <span class="topic-date">2026.02.18</span>
+      <p class="topic-title">中長期的なキャリア形成を支援するためのキャリアコンサルタント向け研修 グリーン分野 ガイダンスセミナー 出演</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">まずは、現状をお聞かせください。</h2>
+    <p class="contact-lead">
+      整理されていなくても大丈夫です。<br>
+      企業・個人どちらのご相談も歓迎します。<br>
+      30分のオンライン相談も可能です。<br>
+      通常2営業日以内にご返信いたします。
+    </p>
+    <form class="contact-form" action="https://formspree.io/f/xqeywpgj" method="POST">
+      <div class="form-group">
+        <label class="form-label">お名前 / Name</label>
+        <input type="text" name="name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">メールアドレス / Email</label>
+        <input type="email" name="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">お問い合わせ内容 / Message</label>
+        <textarea name="message" class="form-textarea" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">送信する</button>
+    </form>
+    <p class="privacy-note">
+      面談でお話しいただいた内容は、守秘義務のもと厳重に管理いたします。企業からのご依頼であっても、社員個人の面談内容を企業へ開示することはありません。ご本人の同意なく、第三者に共有することも一切ございません。
+    </p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">キャリアブルーミング 服部陵子<span style="display:block;font-size:0.7rem;letter-spacing:0.15em;color:rgba(255,255,255,0.2);">Career Blooming</span></span>
+  <span class="footer-copy">© 2026 Career Blooming. All rights reserved.</span>
+</footer>
+
+</body>
+</html>
